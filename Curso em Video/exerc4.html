@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ <style>
+    body{
+        background-color: black;
+        color: white;
+        font: normal 18pt arial;
+    }
+ </style>
+<body>
+
+    <h1>Apredendo a <strong>DOM</strong>. </h1>
+    <p>Aqui o resultado. </p>
+    <p>Apredendo a usar <strong>DOM</strong> em JS</p>
+    <div id="msg">Clique em mim</div>
+
+    <script>
+        var p1 =  window.document.getElementsByTagName('p')[0]
+        window.document.write('Está escrito assim: ' + p1.innerText)
+        var d = window.document.getElementById('msg')
+        d.style.background = 'blue'
+        d.style.display = 'flex'
+        d.style.alignItems = 'center' 
+        d.style.justifyContent = 'center'
+        d.innerText = 'Daniel é lindo'
+
+
+      </script> 
+</body>
+</html>

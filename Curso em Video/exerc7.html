@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: #F2CB05;
+            color: black;
+        }
+        h1 {
+            background-color: green;
+            margin: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        div.title{
+            border-radius: 10px;
+            background-color: rgb(21, 55, 206);
+            margin: 10px;
+            color: white;
+            box-shadow: 5px 5px 10px rgb(0, 0, 0);
+            
+        }
+
+        div#res {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px ;
+        }
+        div.container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: whitesmoke;
+            border-radius: 20px;
+            box-shadow: 5px 5px 10px rgb(0, 0, 0);
+        }
+
+        div.container input{
+            border-radius: 5px;
+            margin: 10px;
+            width: 80px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        p{
+            font-size: large;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="title"><h1>Sistema de Multas</h1></div>
+    <div class="container">
+        <p>Velocidade do Carro :</p><input type="number" name="txtvel" id="txtvel"> <P>km/h</P>
+        <div class="button"> <input type="button" value="verificar" onclick="calcular()"></div>
+    </div>
+    
+    <div id="res"></div>
+
+    <div class="title"><h1>Detector de Brasileiros</h1></div>
+    Você nasceu no país: <input type="text" name="txname" id="txname">.
+    <input type="button" value="verificar" onclick="nacionalidade()">
+    <div id="resp">
+
+    </div>
+
+    <script>
+        function nacionalidade() {
+            var txname = window.document.querySelector('input#txname')
+            var resp = window.document.querySelector('div#resp')
+            var nacio = txname.value
+            resp.innerHTML = ' <p> Seu país é: </p>'
+            if (nacio === 'Brasil') {
+                resp.innerHTML += `<p>${nacio}. <br> Logo você é Brasileiro.</p>`
+            } else {
+                resp.innerHTML += `<p>${nacio}. <br> Logo você é estregeiro, seja bem vindo ao Brasil </p>`
+            }
+        }
+
+        /*var pais = 'Espanha'
+console.log(`Se você nasceu no  ${pais}`)
+if (pais == 'Brasil'){
+    console.log('Você é Brasileiro(a)')
+} else {
+    console.log('Você é Estrangeiro')
+}*/
+
+
+        function calcular() {
+            var txtvel = window.document.querySelector('input#txtvel')
+            var res = window.document.querySelector('div#res')
+            var vel = Number(txtvel.value)
+            res.innerHTML = `<p>Sua velelocidade é de ${vel}km/h</p>`
+            if (vel > 60) {
+                res.innerHTML += `Você foi MULTADO por estar a cima da velocidade`
+            }
+        }
+        /* 
+        var vel = 60
+        console.log(`A velocidade do seu carro é de ${vel}km/h`)
+        if(vel > 60){ //condição simples.
+            console.log('você ultrapassou a velocidade permitida. Multado!')
+        }
+            console.log('Dirija sempre com seguraça, respeite a vida')
+        
+        */
+
+
+    </script>
+
+
+</body>
+
+</html>
